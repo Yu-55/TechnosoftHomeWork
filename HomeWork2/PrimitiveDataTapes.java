@@ -13,7 +13,7 @@ public class PrimitiveDataTapes {
         System.out.println("The population in a country is " + usPopulation);
         float interestRate = 1.5f;
         System.out.println("Interest rate is " + interestRate);
-        int bankAccountBalance = 200_000;
+        double bankAccountBalance = 200_000;
         System.out.println("Balance in a bank account is " + bankAccountBalance);
         boolean isSunRiseFromWest = false;
         System.out.println("Does the sun rise from the west? " + isSunRiseFromWest);
