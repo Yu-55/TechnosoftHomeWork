@@ -16,6 +16,7 @@ public class PrimitiveDataTapes {
         int bankAccountBalance = 200_000;
         System.out.println("Balance in a bank account is " + bankAccountBalance);
         boolean isSunRiseFromWest = false;
+//      String result = isSunRiseFromWest ? "Yes" : "No";
         System.out.println("Does the sun rise from the west? " + isSunRiseFromWest);
         char myFirstInitial = 'Y', mySecondInitial = 'K';
         System.out.println("Initials of my name is " + myFirstInitial + mySecondInitial);
