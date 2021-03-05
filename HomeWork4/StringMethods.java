@@ -11,15 +11,19 @@ public class StringMethods {
         int indOfFirstCharAfterFirstGap = formattedSentence.indexOf(" ") + 1;
         int indOfFirstCharAfterSecondGap = formattedSentence.lastIndexOf(" ") + 1;
 
-        String FirstWordInTitleCase = formattedSentence.substring(0, 1).toUpperCase() + formattedSentence.substring(1, indOfFirstCharAfterFirstGap); // First word in title case
 
-        String SecondWordInTitleCase = formattedSentence.substring(indOfFirstCharAfterFirstGap, indOfFirstCharAfterFirstGap + 1).toUpperCase()
+
+        String firstWordInTitleCase = formattedSentence.substring(0, 1).toUpperCase() + formattedSentence.substring(1, indOfFirstCharAfterFirstGap); // First word in title case
+
+        String secondWordInTitleCase = formattedSentence.substring(indOfFirstCharAfterFirstGap, indOfFirstCharAfterFirstGap + 1).toUpperCase()
                 + formattedSentence.substring(indOfFirstCharAfterFirstGap + 1, indOfFirstCharAfterSecondGap);                                       // Second word in title case
 
-        String ThirdWordInTitleCase = formattedSentence.substring(indOfFirstCharAfterSecondGap, indOfFirstCharAfterSecondGap + 1).toUpperCase()
+
+
+        String thirdWordInTitleCase = formattedSentence.substring(indOfFirstCharAfterSecondGap, indOfFirstCharAfterSecondGap + 1).toUpperCase()
                 + formattedSentence.substring(indOfFirstCharAfterSecondGap + 1);                                                                    // Third word in title case
 
-        String result = FirstWordInTitleCase + SecondWordInTitleCase + ThirdWordInTitleCase;
+        String result = firstWordInTitleCase + secondWordInTitleCase + thirdWordInTitleCase;
         System.out.println(result);
 
 
