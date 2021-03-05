@@ -13,7 +13,7 @@ public class StringMethods {
                 + formattedSentence.substring(indOfFirstCharAfterFirstGap + 1, indOfFirstCharAfterSecondGap);
         String thirdWordInTitleCase = formattedSentence.substring(indOfFirstCharAfterSecondGap, indOfFirstCharAfterSecondGap + 1).toUpperCase()
                 + formattedSentence.substring(indOfFirstCharAfterSecondGap + 1);
-
+        
         // Checking if there are unnecessary gaps in the sentence
         boolean unnecessaryGaps = formattedSentence.contains("  ");
         String SecWordGapsRemoved = unnecessaryGaps ? secondWordInTitleCase.trim() + " " : secondWordInTitleCase;
