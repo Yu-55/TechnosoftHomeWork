@@ -42,11 +42,11 @@ public class StringMethods {
         String[] words = formattedSentence.split(" ");
 
         int i = 0;
-        String word1 = words[i].trim().substring(0, 1).toUpperCase() + words[i].trim().substring(1);
+        String word1 = words[i].substring(0, 1).toUpperCase() + words[i].substring(1);
         i++;
-        String word2 = words[i].trim().substring(0, 1).toUpperCase() + words[i].trim().substring(1);
+        String word2 = words[i].substring(0, 1).toUpperCase() + words[i].substring(1);
         i++;
-        String word3 = words[i].trim().substring(0, 1).toUpperCase() + words[i].trim().substring(1);
+        String word3 = words[i].substring(0, 1).toUpperCase() + words[i].substring(1);
         System.out.println(word1 + " " + word2 + " " + word3);
 
     }
