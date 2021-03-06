@@ -13,7 +13,7 @@ public class StringMethods {
                 + formattedSentence.substring(indOfFirstCharAfterFirstGap + 1, indOfFirstCharAfterSecondGap);
         String thirdWordInTitleCase = formattedSentence.substring(indOfFirstCharAfterSecondGap, indOfFirstCharAfterSecondGap + 1).toUpperCase()
                 + formattedSentence.substring(indOfFirstCharAfterSecondGap + 1);
-        
+
         // Checking if there are unnecessary gaps in the sentence
         boolean unnecessaryGaps = formattedSentence.contains("  ");
         String SecWordGapsRemoved = unnecessaryGaps ? secondWordInTitleCase.trim() + " " : secondWordInTitleCase;
@@ -30,6 +30,24 @@ public class StringMethods {
         formattedSentenceUpdated = firstWordInTitleCase + secondWordInTitleCase + thirdWordInTitleCase;
 
         System.out.println(formattedSentenceUpdated);
+
+        inTitleCase2();
+
+    }
+
+    public static void inTitleCase2() {
+        // This method will have issues if we put additional gaps between words
+        String threeWordSentence = "hAppY nEw yeaR";
+        String formattedSentence = threeWordSentence.toLowerCase().trim();
+        String[] words = formattedSentence.split(" ");
+
+        int i = 0;
+        String word1 = words[i].trim().substring(0, 1).toUpperCase() + words[i].trim().substring(1);
+        i++;
+        String word2 = words[i].trim().substring(0, 1).toUpperCase() + words[i].trim().substring(1);
+        i++;
+        String word3 = words[i].trim().substring(0, 1).toUpperCase() + words[i].trim().substring(1);
+        System.out.println(word1 + " " + word2 + " " + word3);
 
     }
 }
