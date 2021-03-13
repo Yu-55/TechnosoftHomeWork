@@ -61,10 +61,11 @@ public class IfStatement {
         int indOfFirstGap = formattedSentence2.indexOf(" ");
 
         String abbreviation1 = formattedSentence2.substring(0, 1);
-        String abbreviation3 = formattedSentence2.substring(formattedSentence2.lastIndexOf(" ") + 1, formattedSentence2.lastIndexOf(" ") + 2);
-
-        formattedSentence2 = formattedSentence2.replace("  ", "");
-        String abbreviation2 = formattedSentence2.substring(formattedSentence2.indexOf(" ") + 1, formattedSentence2.indexOf(" ") + 2);
+        String abbreviation3 = formattedSentence2.substring(formattedSentence2.lastIndexOf(" ") + 1,
+                formattedSentence2.lastIndexOf(" ") + 2);
+        formattedSentence2 = formattedSentence2.replaceAll("  ", "");
+        String abbreviation2 = formattedSentence2.substring(formattedSentence2.indexOf(" ") + 1,
+                formattedSentence2.indexOf(" ") + 2);
         if (formattedSentence2.charAt(indOfFirstGap) != ' ') {
 
             char abbreviation22 = formattedSentence2.charAt(indOfFirstGap);
@@ -72,5 +73,20 @@ public class IfStatement {
             System.out.println("The abbreviation of: '" + threeWordsSentence_2 + " is " + abbreviation1 + abbreviation22 + abbreviation3);
         } else
             System.out.println("The abbreviation of: '" + threeWordsSentence_2 + " is " + abbreviation1 + abbreviation2 + abbreviation3);
+
+
+        /**
+         * String sentence_4 = "We all are here to learn good stuff";
+         * Print the number of words in the sentence.
+         *
+         */
+
+        String sentence_4 = "We all    are here to learn good stuff";
+        String[] words_4 = sentence_4.split(" ");
+        words_4 = sentence_4.split("\\s+");
+        int numberOfWords = words_4.length;
+        System.out.println("Number of words in the sentence is " + numberOfWords);
+
+
     }
 }
