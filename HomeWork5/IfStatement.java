@@ -47,14 +47,36 @@ public class IfStatement {
         threeWordsSentence_1 = word1 + " " + word2 + " " + word3;
 
         System.out.println(threeWordsSentence_1);
+        //One more method that will ignore additional spaces:
 
-/**
- * Create abbreviation:
- * String threeWordsSentence_2 =  "Lab sessIONS clAsses";
- * // code
- * LSC
- *
- */
+        String threeWordsSentence_11 = "hAppY nEw yeaR";
+        String formattedSentence22 = threeWordsSentence_11.toLowerCase().trim();
+
+        int indOfFirstCharAfterFirstGap = formattedSentence22.indexOf(" ") + 1;
+        int indOfFirstCharAfterSecondGap = formattedSentence22.lastIndexOf(" ") + 1;
+
+        String word11 = formattedSentence22.substring(0, 1).toUpperCase() + formattedSentence22.substring(1, indOfFirstCharAfterFirstGap - 1);
+        String word33 = formattedSentence22.substring(indOfFirstCharAfterSecondGap, indOfFirstCharAfterSecondGap + 1).toUpperCase()
+                + formattedSentence22.substring(indOfFirstCharAfterSecondGap + 1);
+
+        for (int i = 0; i < formattedSentence22.length(); i++) {
+            if (formattedSentence22.contains("  ")) {
+                formattedSentence22 = formattedSentence22.replaceAll("  ", " ");
+            } else
+                break;
+        }
+        String word22 = formattedSentence22.substring(indOfFirstCharAfterFirstGap, indOfFirstCharAfterFirstGap + 1).toUpperCase()
+                + formattedSentence22.substring(indOfFirstCharAfterFirstGap + 1, formattedSentence22.lastIndexOf(" "));
+        threeWordsSentence_11 = word11 + " " + word22 + " " + word33;
+        System.out.println(threeWordsSentence_11);
+
+        /**
+         * Create abbreviation:
+         * String threeWordsSentence_2 =  "Lab sessIONS clAsses";
+         * // code
+         * LSC
+         *
+         */
         String threeWordsSentence_2 = "Lab sessIONS clAsses";
         String formattedSentence2 = threeWordsSentence_2.toUpperCase().trim();
 
