@@ -19,7 +19,7 @@ public class HomeWork7 {
         for (String word : words) {
             gatheringWords += word.substring(0, 1).toUpperCase() + word.substring(1) + " ";
         }
-        sentence1 = gatheringWords;
+        sentence1 = gatheringWords.trim();
         System.out.println(sentence1);
 
         /**
