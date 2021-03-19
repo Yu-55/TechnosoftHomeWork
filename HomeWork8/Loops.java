@@ -55,8 +55,15 @@ public class Loops {
          * 7 -> prime
          * 10 -> not a prime
          */
-        int number = 23;
-        boolean isPrime = number % 3 != 0 && number % 2 != 0;
+        int number = 11;
+        boolean isPrime = false;
+        if (number == 2 || number == 3) {
+            isPrime = true;
+        } else if (number % 2 != 0 && number % 3 != 0) {
+            isPrime = true;
+        } else
+            isPrime = false;
+
         String resultIsPrime = isPrime ? "Yes" : "No";
         System.out.println("Is the number prime? " + resultIsPrime);
     }
