@@ -55,16 +55,21 @@ public class Loops {
          * 7 -> prime
          * 10 -> not a prime
          */
-        int number = 11;
+        int num = 461;
         boolean isPrime = false;
-        if (number == 2 || number == 3) {
-            isPrime = true;
-        } else if (number % 2 != 0 && number % 3 != 0) {
+        if (num <= 1 || num % 2 == 0) {
+            isPrime = false;
+        } else if (num == 2) {
             isPrime = true;
         } else
-            isPrime = false;
-
-        String resultIsPrime = isPrime ? "Yes" : "No";
-        System.out.println("Is the number prime? " + resultIsPrime);
+            for (int i = 3; i <= Math.sqrt(num); i += 2) {
+                if (num % i == 0) {
+                    isPrime = false;
+                } else {
+                    isPrime = true;
+                }
+            }
+        String result = isPrime ? "is the " : "is not a ";
+        System.out.println(num + " " + result + "prime number");
     }
 }
