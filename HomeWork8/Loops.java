@@ -55,13 +55,17 @@ public class Loops {
          * 7 -> prime
          * 10 -> not a prime
          */
-        int num = 461;
+        int num = 2;
+
         boolean isPrime = false;
-        if (num <= 1 || num % 2 == 0) {
+        if (num <= 1) {
             isPrime = false;
         } else if (num == 2) {
             isPrime = true;
-        } else
+        } else if (num % 2 == 0){
+            isPrime = false;
+        }else
+
             for (int i = 3; i <= Math.sqrt(num); i += 2) {
                 if (num % i == 0) {
                     isPrime = false;
