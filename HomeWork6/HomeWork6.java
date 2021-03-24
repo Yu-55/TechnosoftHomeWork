@@ -15,6 +15,7 @@ public class HomeWork6 {
 
         double maxScore = 700;
         double studentScore = 600;
+
         double percentage = studentScore / maxScore * 100;
         percentage = Math.round(percentage * 100.0) / 100.0;
 

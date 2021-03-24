@@ -56,7 +56,6 @@ public class Loops {
          * 10 -> not a prime
          */
         int num = 2;
-
         boolean isPrime = false;
         if (num <= 1) {
             isPrime = false;
