@@ -11,13 +11,13 @@ public class School {
          name: displayStudentProfile
          */
         Students student1 = new Students();
-        student1.enrollStudent("Alex", "LA", "QA");
+        student1.enrollStudent("Alex", "LA", "pm");
         student1.displayStudentProfile();
 
         /**
          Method to fee deposit
          */
-        student1.feeDeposit(100);
+        student1.feeDeposit(1200);
 
         /**
          Student to change course
@@ -26,8 +26,10 @@ public class School {
          2. Show error (saying, Same course entered) if student enter enrolled course as new course
          3. Show error (saying, Invalid course entered) if student enter a course not offered by school
          */
-        student1.changeCourse("web");
+        student1.changeCourse("qa");
         student1.displayStudentProfile();
+        System.out.println(student1.studentFeeBalance);
+
 
         /**
          static Method to display school summary:

@@ -45,7 +45,7 @@ public class Students {
 
     public double feeDeposit(double deposit) {
         if (deposit > studentFeeBalance) {
-            System.out.print("Your deposit should be less or equal to your balance ");
+            System.out.print("Your deposit should be less or equal to your balance");
             return studentFeeBalance;
         }
         totalStudentPaid += deposit;
@@ -59,10 +59,12 @@ public class Students {
         } else if (newCourse.equalsIgnoreCase(studentEnrolledCourse)) {
             System.out.println("Same course entered");
         } else {
-            int l;
-            for (l = 0; l < offeredCourses.length; l++) {
+            for (int l = 0; l < offeredCourses.length; l++) {
                 if (offeredCourses[l].equalsIgnoreCase(newCourse)) {
                     studentFeeBalance = feesCourses[l] - totalStudentPaid;
+                    if (studentFeeBalance < 0) {
+                        studentFeeBalance = 0;
+                    }
                     studentEnrolledCourse = offeredCourses[l];
                     break;
                 } else if (l == offeredCourses.length - 1) {
