@@ -5,17 +5,17 @@ import java.util.Arrays;
 public class Test {
     public static void main(String[] args) {
 
-//        int[] arrayA = {1, 2, 4, 3, 1, 6, 1};
-//        int valueToRemove = 11;
-//        Test a = new Test();
-//        System.out.println(Arrays.toString(a.removeValueFromintArray(arrayA, valueToRemove)));
+        int[] arrayA = {1, 2, 4, 3, 1, 6, 1};
+        int valueToRemove = 11;
+        Test a = new Test();
+        System.out.println(Arrays.toString(a.removeValueFromintArray(arrayA, valueToRemove)));
 
-        int[] arrayB = {0, 5, -1, 1, 2, 5, 3, 7, 1, 2};
+        int[] arrayB = {-1, -3, 4, 2};
         Test b = new Test();
         System.out.println(b.smallestPos(arrayB));
 
-//        Test c = new Test();
-//        c.pointsCalculation(70);
+        Test c = new Test();
+        c.pointsCalculation(70);
 
     }
 
@@ -76,17 +76,17 @@ public class Test {
         return smallestNumber;
     }
 
-
     public void pointsCalculation(int speed) {
         int speedLimit = 70;
-        int maxSpeed = 160;
+        int maxSpeed = 130; //max speed when dl will be suspended
+
         int speedOverLimit = speed - speedLimit;
         int points = speedOverLimit / 5;
         if (speed <= speedLimit) {
             System.out.println("Your speed is " + speed + " Points " + points
                     + "\nThank you for driving within the speed limit");
         } else if (speed >= maxSpeed) {
-            System.out.println("Your speed is " + speed + " - 12 points " + "\n" + "License suspended");
+            System.out.println("Your speed is " + speed + " " + points + " points " + "\n" + "License suspended");
         } else System.out.println("Your speed is " + speed + " - Points " + points);
     }
 
