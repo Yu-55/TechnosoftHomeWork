@@ -5,17 +5,17 @@ import java.util.Arrays;
 public class Test {
     public static void main(String[] args) {
 
-        int[] arrayA = {1, 2, 4, 3, 1, 6, 1};
-        int valueToRemove = 11;
-        Test a = new Test();
-        System.out.println(Arrays.toString(a.removeValueFromintArray(arrayA, valueToRemove)));
+//        int[] arrayA = {1, 2, 4, 3, 1, 6, 1};
+//        int valueToRemove = 11;
+//        Test a = new Test();
+//        System.out.println(Arrays.toString(a.removeValueFromintArray(arrayA, valueToRemove)));
 
-        int[] arrayB = {3, 5, 1, 4, 2, 7};
+        int[] arrayB = {0, 5, -1, 1, 2, 5, 3, 7, 1, 2};
         Test b = new Test();
         System.out.println(b.smallestPos(arrayB));
 
-        Test c = new Test();
-        c.pointsCalculation(70);
+//        Test c = new Test();
+//        c.pointsCalculation(70);
 
     }
 
@@ -66,6 +66,7 @@ public class Test {
                     }
                 } else if (numbers[n + 1] - numbers[n] > 1) {
                     smallestNumber = numbers[n] + 1;
+                    break;
                 }
             }
         }
