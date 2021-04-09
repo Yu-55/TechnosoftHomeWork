@@ -66,6 +66,9 @@ public class Test {
                     }
                 } else if (numbers[n + 1] - numbers[n] > 1) {
                     smallestNumber = numbers[n] + 1;
+                    if (counter == 0) {
+                        return 1;
+                    }
                     break;
                 }
             }
