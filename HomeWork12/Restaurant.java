@@ -17,6 +17,7 @@ public class Restaurant {
         myRestaurant.seatsParty(30);
         myRestaurant.seatsParty(3);
         myRestaurant.removeParty(20);
+        myRestaurant.seatsParty(37);
         myRestaurant.restaurantSummary();
 
     }
@@ -32,10 +33,19 @@ public class Restaurant {
         }
     }
 
-    public void seatsParty(int guestsJustSat) {
-        currentGuestCount += guestsJustSat;
-        totalGuestsSoFar += guestsJustSat;
+    public void seatsParty(int addGuests) {
+        if (addGuests <= 0) {
+            System.out.println("Please enter valid amount");
+        } else if (addGuests > maxGuestCapacity - currentGuestCount) {
+            System.out.println("Not able to add " + addGuests + " guests," + " you can add less or equal to " + (maxGuestCapacity - currentGuestCount) +
+                    " guests");
+        }else{
+            currentGuestCount += addGuests;
+            totalGuestsSoFar += addGuests;
+        }
+
     }
+
 
     public void removeParty(int guestsLeftParty) {
         currentGuestCount = currentGuestCount - guestsLeftParty;
