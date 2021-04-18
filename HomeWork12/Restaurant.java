@@ -33,8 +33,13 @@ public class Restaurant {
     }
 
     public void seatsParty(int guestsJustSat) {
-        currentGuestCount += guestsJustSat;
-        totalGuestsSoFar += guestsJustSat;
+        if (guestsJustSat <= 0) {
+            System.out.println("Please enter valid amount");
+        } else {
+            currentGuestCount += guestsJustSat;
+            totalGuestsSoFar += guestsJustSat;
+
+        }
     }
 
     public void removeParty(int guestsLeftParty) {
