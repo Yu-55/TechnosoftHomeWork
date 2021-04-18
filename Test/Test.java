@@ -15,7 +15,7 @@ public class Test {
         System.out.println(b.smallestPos(arrayB));
 
         Test c = new Test();
-        c.pointsCalculation(70);
+        c.pointsCalculation(130);
 
     }
 
@@ -82,9 +82,8 @@ public class Test {
 
         int speedOverLimit = speed - speedLimit;
         int points = speedOverLimit / 5;
-        if (speed <= speedLimit) {
-            System.out.println("Your speed is " + speed + " Points " + points
-                    + "\nThank you for driving within the speed limit");
+        if (speedOverLimit <= 4) {
+            System.out.println("Your speed is " + speed + " - 0 Points" + "\n" + "Thank you for driving within the speed limit");
         } else if (speed >= maxSpeed) {
             System.out.println("Your speed is " + speed + " " + points + " points " + "\n" + "License suspended");
         } else System.out.println("Your speed is " + speed + " - Points " + points);
