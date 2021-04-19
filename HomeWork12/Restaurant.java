@@ -33,22 +33,22 @@ public class Restaurant {
         }
     }
 
-    public void seatsParty(int addGuests) {
-        if (addGuests <= 0) {
+    public void seatsParty(int addSeats) {
+        if (addSeats <= 0) {
             System.out.println("Please enter valid amount");
-        } else if (addGuests > maxGuestCapacity - currentGuestCount) {
-            System.out.println("Not able to add " + addGuests + " guests," + " you can add less or equal to " + (maxGuestCapacity - currentGuestCount) +
+        } else if (addSeats > maxGuestCapacity - currentGuestCount) {
+            System.out.println("Not able to add " + addSeats + " guests," + " you can add less or equal to " + (maxGuestCapacity - currentGuestCount) +
                     " guests");
         }else{
-            currentGuestCount += addGuests;
-            totalGuestsSoFar += addGuests;
+            currentGuestCount += addSeats;
+            totalGuestsSoFar += addSeats;
         }
 
     }
 
 
-    public void removeParty(int guestsLeftParty) {
-        currentGuestCount = currentGuestCount - guestsLeftParty;
+    public void removeParty(int removeSeats) {
+        currentGuestCount = currentGuestCount - removeSeats;
         System.out.println("There are currently " + currentGuestCount + " guests in " + restaurantName);
     }
 
