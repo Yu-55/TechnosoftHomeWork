@@ -38,7 +38,7 @@ public class Printer {
     }
 
     public void print(int numberOfPages, boolean doubleSidedPrinting) {
-        if (numberOfPages < 0) {
+        if (numberOfPages <= 0) {
             System.out.println("Please enter valid number of pages");
         } else if (numberOfPages / 2 > paperLevel || numberOfPages > tonerLevel) {
             System.out.println("Not enough paper or toner");
@@ -52,7 +52,7 @@ public class Printer {
     }
 
     public void print(int numberOfPages) {
-        if (numberOfPages < 0) {
+        if (numberOfPages <= 0) {
             System.out.println("Please enter valid number of pages");
         } else if (numberOfPages > paperLevel || numberOfPages > tonerLevel) {
             System.out.println("Not enough paper or toner");
@@ -63,7 +63,7 @@ public class Printer {
     }
 
     public static void addToner(int addToner) {
-        if (addToner < 0 || addToner > maxTonerLevel - tonerLevel) {
+        if (addToner <= 0 || addToner > maxTonerLevel - tonerLevel) {
             System.out.println("Invalid toner value");
         } else {
             tonerLevel += addToner;
@@ -71,7 +71,7 @@ public class Printer {
     }
 
     public static void addPaper(int addPaper) {
-        if (addPaper < 0 || addPaper > maxPaperLevel - paperLevel) {
+        if (addPaper <= 0 || addPaper > maxPaperLevel - paperLevel) {
             System.out.println("Invalid paper value");
         } else {
             paperLevel += addPaper;
