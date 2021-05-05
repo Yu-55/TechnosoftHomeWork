@@ -59,6 +59,7 @@ public class Test2 {
         int indOfY = 0;
         int countX = 0;
         int countY = 0;
+        int p = arr.length - 1;
 
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == x) {
@@ -79,28 +80,31 @@ public class Test2 {
         int temp = Math.max(indOfX, indOfY);
 
         if (countX == 0 || countY == 0) {
-            return -1;
+            p = -1;
         } else if (countX == countY && temp == arr.length - 1) {
-            return temp;
+            p = temp;
         } else if (countX == countY && (arr[temp + 1] == x || arr[temp + 1] == y)) {
             return temp;
         }
-        for (int j = temp + 2; j < arr.length; j++) {
+        int j;
+        for (j = temp + 2; j < arr.length; j++) {
             if (arr[j] == x) {
                 countX++;
                 if (countX != countY) {
-                    return j - 1;
+                    p = j - 1;
+                    break;
                 }
             } else if (arr[j] == y) {
                 countY++;
                 if (countX != countY) {
-                    return j - 1;
+                    p = j - 1;
+                    break;
                 }
             }
         }
-        if (countX != countY) {
-            return -1;
+        if (p != j - 1 && countX != countY) {
+            p = -1;
         }
-        return arr.length - 1;
+        return p;
     }
 }
