@@ -1,9 +1,6 @@
 package HomeWork16;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Accounts {
     private String accType;
@@ -11,17 +8,16 @@ public class Accounts {
     private static long accNumber = 1111111111L;
     private static Map<Long, Double> accountAndBalance = new HashMap<>();
 
-    public long createAccount(String accType) {
-        long output = -1;
-        if (!accType.equalsIgnoreCase("checking") && !accType.equalsIgnoreCase("saving")) {
 
+    public long createAccount(String accType) {
+        long newAccNumber = -1;
+        if (!accType.equalsIgnoreCase("checking") && !accType.equalsIgnoreCase("saving")) {
         } else {
             this.accType = accType;
-            long newAccNumber = accNumber + 1;
+            newAccNumber = accNumber += 1;
             accountAndBalance.put(newAccNumber, 0.0);
-            output = newAccNumber % 10000;
         }
-        return output;
+        return newAccNumber;
     }
 
     public double accountBalance(long accountNumber) {
@@ -47,8 +43,6 @@ public class Accounts {
                 }
             }
         }
-
-
         return balanceAmount;
     }
 
@@ -66,4 +60,9 @@ public class Accounts {
         }
         return balanceAmount;
     }
+
+    public Map<Long, Double> getAccountAndBalance() {
+        return accountAndBalance;
+    }
+
 }
