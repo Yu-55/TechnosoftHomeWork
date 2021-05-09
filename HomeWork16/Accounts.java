@@ -50,8 +50,10 @@ public class Accounts {
         double balanceAmount = -1;
         for (long accountN : accountAndBalance.keySet()) {
             if (accountN == accountNum) {
-                if (amount < 0) {
+                if (amount <0) {
                     System.out.println("Please enter valid amount");
+                } else if (amount > accountAndBalance.get(accountN)) {
+                    System.out.println("The amount is exceeding your current balance, please enter lower amount");
                 } else {
                     balanceAmount = accountAndBalance.get(accountN) - amount;
                     accountAndBalance.put(accNumber, balanceAmount);

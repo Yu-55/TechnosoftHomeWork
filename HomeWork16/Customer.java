@@ -26,7 +26,7 @@ public class Customer {
             this.ssn = ssn;
             Accounts accounts = new Accounts();
             long output = accounts.createAccount(accType) % 10000;
-            System.out.println("Congratulations with your new " + accType + " account \nAccount number: ***" + output+"\n");
+            System.out.println("Congratulations with your new " + accType + " account \nAccount number: ***" + output + "\n");
         }
     }
 
@@ -45,7 +45,7 @@ public class Customer {
             this.address = address;
             Accounts accounts = new Accounts();
             long output = accounts.createAccount(accType) % 10000;
-            System.out.println("Congratulations with your new " + accType + " account \nAccount number: ***" + output+"\n");
+            System.out.println("Congratulations with your new " + accType + " account \nAccount number: ***" + output + "\n");
 
         }
     }
@@ -149,7 +149,8 @@ public class Customer {
         }
         System.out.println("Please enter amount");
         String validateAmount = scanner.nextLine().trim();
-        while (!validateAmount.matches("[0-9]+")) {
+
+        while (!validateAmount.matches("[0-9]+") || accounts.withDraw(Long.parseLong(validateAccNumber), Long.parseLong(validateAmount)) == -1) {
             System.out.println("Please enter positive number without decimal point");
             validateAmount = scanner.nextLine().trim();
         }
