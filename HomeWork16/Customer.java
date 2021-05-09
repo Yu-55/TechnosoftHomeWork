@@ -1,6 +1,8 @@
 package HomeWork16;
 
 import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Customer {
@@ -8,7 +10,7 @@ public class Customer {
     private int ssn;
     private String address;
     private static long customerID = 10000000000L;
-
+    private List<Accounts> accountsObject = new ArrayList<>();
 
     public Customer(String name, int ssn, String accType) {
         name = name.trim();
@@ -23,10 +25,9 @@ public class Customer {
             this.name = name;
             this.ssn = ssn;
             Accounts accounts = new Accounts();
-            long output = accounts.createAccount(accType);
-            System.out.println("Congratulations with your new " + accType + " account \nAccount number: ***" + output);
+            long output = accounts.createAccount(accType) % 10000;
+            System.out.println("Congratulations with your new " + accType + " account \nAccount number: ***" + output+"\n");
         }
-
     }
 
     public Customer(String name, int ssn, String accType, String address) {
@@ -43,8 +44,8 @@ public class Customer {
             this.ssn = ssn;
             this.address = address;
             Accounts accounts = new Accounts();
-            long output = accounts.createAccount(accType);
-            System.out.println("Congratulations with your new " + accType + " account \nAccount number: ***" + output);
+            long output = accounts.createAccount(accType) % 10000;
+            System.out.println("Congratulations with your new " + accType + " account \nAccount number: ***" + output+"\n");
 
         }
     }
@@ -54,12 +55,10 @@ public class Customer {
         System.out.println("What information would you like to update: 'Name' or 'Address'");
         String infoValidation = scanner.nextLine().trim();
 
-
         while (!infoValidation.equalsIgnoreCase("name") && !infoValidation.equalsIgnoreCase("address")) {
             System.out.println("Please enter what you would like to change: 'Name' or 'Address'");
             infoValidation = scanner.nextLine();
         }
-
         String nameValidation;
         if (infoValidation.equalsIgnoreCase("name")) {
             System.out.println("Please enter new Name");
@@ -78,9 +77,7 @@ public class Customer {
             this.address = addressValidation;
             System.out.println("Address has been updated successfully");
         }
-
     }
-
 
     public void createAccount() {
         Accounts accounts = new Accounts();
@@ -94,7 +91,7 @@ public class Customer {
             validateAccType = scanner.nextLine().toLowerCase().trim();
             output = accounts.createAccount(validateAccType);
         }
-        System.out.println(validateAccType + " account has been created \nLast 4-digits of account number is " + output);
+        System.out.println(validateAccType + " account has been created \nLast 4-digits of account number is " + output % 10000);
     }
 
     public void makeDeposit() {
@@ -107,15 +104,12 @@ public class Customer {
             System.out.println("Please enter valid account number");
             validateAccNumber = scanner.nextLine().trim();
         }
-
         System.out.println("Please enter amount");
         String validateAmount = scanner.nextLine().trim();
-
         while (!validateAmount.matches("[0-9]+")) {
             System.out.println("Please enter positive number without decimal point");
             validateAmount = scanner.nextLine().trim();
         }
-
         double balance = accounts.makeDeposit(Long.parseLong(validateAccNumber), Long.parseLong(validateAmount));
         String formattedBalance = NumberFormat.getCurrencyInstance().format(balance);
         System.out.println("Amount has been deposited successfully\nYour updated balance: " + formattedBalance);
@@ -139,6 +133,7 @@ public class Customer {
     }
 
     public void showAllAccountsBalance() {
+        Accounts accounts = new Accounts();
 
     }
 
@@ -153,9 +148,7 @@ public class Customer {
             validateAccNumber = scanner.next().trim();
         }
         System.out.println("Please enter amount");
-
         String validateAmount = scanner.nextLine().trim();
-
         while (!validateAmount.matches("[0-9]+")) {
             System.out.println("Please enter positive number without decimal point");
             validateAmount = scanner.nextLine().trim();
@@ -165,8 +158,6 @@ public class Customer {
         String formattedBalance = NumberFormat.getCurrencyInstance().format(balance);
         System.out.println("Please collect: " + formattedAmount + "\nYour updated balance: " + formattedBalance);
     }
-
-
 }
 
 
