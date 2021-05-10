@@ -10,7 +10,7 @@ public class Customer {
     private int ssn;
     private String address;
     private static long customerID = 10000000000L;
-    private List<Accounts> accountsObject = new ArrayList<>();
+    private List<Accounts> allAccountsObjects = new ArrayList<>();
 
     public Customer(String name, int ssn, String accType) {
         name = name.trim();
@@ -26,6 +26,7 @@ public class Customer {
             this.ssn = ssn;
             Accounts accounts = new Accounts();
             long output = accounts.createAccount(accType) % 10000;
+            allAccountsObjects.add(accounts);
             System.out.println("Congratulations with your new " + accType + " account \nAccount number: ***" + output + "\n");
         }
     }
@@ -44,9 +45,9 @@ public class Customer {
             this.ssn = ssn;
             this.address = address;
             Accounts accounts = new Accounts();
+            allAccountsObjects.add(accounts);
             long output = accounts.createAccount(accType) % 10000;
             System.out.println("Congratulations with your new " + accType + " account \nAccount number: ***" + output + "\n");
-
         }
     }
 
@@ -90,6 +91,8 @@ public class Customer {
             System.out.println("Please enter valid account type");
             validateAccType = scanner.nextLine().toLowerCase().trim();
             output = accounts.createAccount(validateAccType);
+            allAccountsObjects.add(accounts);
+
         }
         System.out.println(validateAccType + " account has been created \nLast 4-digits of account number is " + output % 10000);
     }
@@ -103,6 +106,7 @@ public class Customer {
         while (!validateAccNumber.matches("[0-9]+") || accounts.makeDeposit(Long.parseLong(validateAccNumber), 0) == -1) {
             System.out.println("Please enter valid account number");
             validateAccNumber = scanner.nextLine().trim();
+
         }
         System.out.println("Please enter amount");
         String validateAmount = scanner.nextLine().trim();
@@ -110,6 +114,7 @@ public class Customer {
             System.out.println("Please enter positive number without decimal point");
             validateAmount = scanner.nextLine().trim();
         }
+
         double balance = accounts.makeDeposit(Long.parseLong(validateAccNumber), Long.parseLong(validateAmount));
         String formattedBalance = NumberFormat.getCurrencyInstance().format(balance);
         System.out.println("Amount has been deposited successfully\nYour updated balance: " + formattedBalance);
@@ -134,7 +139,10 @@ public class Customer {
 
     public void showAllAccountsBalance() {
         Accounts accounts = new Accounts();
-
+        System.out.println("You have a total of " + accounts.getAccountAndBalance().size());
+        for (Accounts acc : allAccountsObjects) {
+            System.out.println(acc.getAccountAndBalance() + "\n");
+        }
     }
 
     public void withDraw() {

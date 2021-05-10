@@ -6,8 +6,11 @@ public class Accounts {
     private String accType;
 
     private static long accNumber = 1111111111L;
-    private static Map<Long, Double> accountAndBalance = new HashMap<>();
+    public static Map<Long, Double> accountAndBalance = new HashMap<>();
 
+public Map getAccountAndBalance (){
+    return accountAndBalance;
+}
 
     public long createAccount(String accType) {
         long newAccNumber = -1;
@@ -63,8 +66,6 @@ public class Accounts {
         return balanceAmount;
     }
 
-    public Map<Long, Double> getAccountAndBalance() {
-        return accountAndBalance;
-    }
+
 
 }
